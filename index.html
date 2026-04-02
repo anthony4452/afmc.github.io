@@ -1,771 +1,948 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anthony Morales — CV</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthony Morales — CV</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  :root {
-    --navy: #0f1f3d;
-    --navy-mid: #1a3460;
-    --blue: #2a5caa;
-    --accent: #e8a020;
-    --accent-light: #fdf3e0;
-    --text: #1a1a2e;
-    --muted: #6b7280;
-    --light: #f8f9fc;
-    --white: #ffffff;
-    --border: #e2e8f0;
-  }
+    :root {
+      --navy: #0f1f3d;
+      --navy-mid: #1a3460;
+      --blue: #2a5caa;
+      --accent: #e8a020;
+      --accent-light: #fdf3e0;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --light: #f8f9fc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+    }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: #eef1f7;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 40px 16px;
-    color: var(--text);
-  }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #eef1f7;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 16px;
+      color: var(--text);
+    }
 
-  .cv-wrapper {
-    width: 100%;
-    max-width: 960px;
-    background: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 80px rgba(15,31,61,0.18), 0 4px 20px rgba(15,31,61,0.08);
-  }
-
-  /* ── HERO HEADER ── */
-  .header {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1e4080 100%);
-    padding: 48px 52px;
-    position: relative;
-    overflow: hidden;
-  }
-  .header::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 280px; height: 280px;
-    background: rgba(232,160,32,0.08);
-    border-radius: 50%;
-  }
-  .header::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; left: 30%;
-    width: 400px; height: 200px;
-    background: rgba(42,92,170,0.15);
-    border-radius: 50%;
-  }
-
-  .header-inner {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .photo-frame {
-    flex-shrink: 0;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    border: 4px solid var(--accent);
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
-  }
-  .photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  .header-text { flex: 1; }
-
-  .header-tag {
-    display: inline-block;
-    background: rgba(232,160,32,0.2);
-    color: var(--accent);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(232,160,32,0.3);
-  }
-
-  .header h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 36px;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-  }
-
-  .header-subtitle {
-    color: rgba(255,255,255,0.65);
-    font-size: 14px;
-    font-weight: 300;
-    margin-bottom: 20px;
-    letter-spacing: 0.3px;
-  }
-
-  .contact-strip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 20px;
-  }
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    color: rgba(255,255,255,0.8);
-    font-size: 13px;
-    font-weight: 400;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .contact-item:hover { color: var(--accent); }
-  .contact-item svg {
-    width: 14px; height: 14px;
-    opacity: 0.7;
-    flex-shrink: 0;
-  }
-
-  /* ── MAIN LAYOUT ── */
-  .main {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-  }
-
-  /* ── SIDEBAR ── */
-  .sidebar {
-    background: var(--light);
-    padding: 36px 28px;
-    border-right: 1px solid var(--border);
-  }
-
-  .sidebar-section { margin-bottom: 32px; }
-  .sidebar-section:last-child { margin-bottom: 0; }
-
-  .sidebar-title {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--accent);
-    display: inline-block;
-  }
-
-  /* Educación */
-  .edu-item { margin-bottom: 18px; }
-  .edu-school {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--navy);
-    line-height: 1.3;
-    margin-bottom: 3px;
-  }
-  .edu-degree {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.4;
-    margin-bottom: 3px;
-  }
-  .edu-badge {
-    display: inline-block;
-    background: var(--accent-light);
-    color: #b07010;
-    font-size: 10.5px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 10px;
-    border: 1px solid #f0d090;
-  }
-
-  /* Skills tags */
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .skill-tag {
-    background: var(--white);
-    border: 1px solid var(--border);
-    color: var(--navy);
-    font-size: 11.5px;
-    font-weight: 500;
-    padding: 4px 10px;
-    border-radius: 6px;
-    transition: all 0.2s;
-  }
-  .skill-tag:hover {
-    background: var(--navy);
-    color: var(--white);
-    border-color: var(--navy);
-  }
-  .skill-tag.primary {
-    background: var(--navy);
-    color: var(--white);
-    border-color: var(--navy);
-  }
-
-  /* Idiomas */
-  .lang-item { margin-bottom: 12px; }
-  .lang-name {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .lang-level {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--muted);
-  }
-  .lang-bar {
-    height: 4px;
-    background: var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .lang-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--blue), var(--accent));
-    border-radius: 2px;
-    transition: width 0.8s ease;
-  }
-
-  /* Referencias */
-  .ref-item { margin-bottom: 14px; }
-  .ref-name {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--navy);
-  }
-  .ref-phone {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-
-  /* Certificados */
-  .cert-item {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 14px;
-    align-items: flex-start;
-  }
-  .cert-dot {
-    width: 8px; height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 5px;
-  }
-  .cert-text {
-    font-size: 12px;
-    color: var(--text);
-    line-height: 1.4;
-  }
-  .cert-hours {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-
-  /* ── CONTENT ── */
-  .content {
-    padding: 36px 40px;
-  }
-
-  .content-section { margin-bottom: 32px; }
-  .content-section:last-child { margin-bottom: 0; }
-
-  .section-title {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--accent);
-    display: inline-block;
-  }
-
-  /* Perfil */
-  .profile-text {
-    font-size: 13.5px;
-    line-height: 1.75;
-    color: #374151;
-    font-weight: 300;
-  }
-
-  /* Experiencia */
-  .job { margin-bottom: 22px; }
-  .job:last-child { margin-bottom: 0; }
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 4px;
-    gap: 10px;
-  }
-  .job-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--navy);
-  }
-  .job-period {
-    font-size: 11.5px;
-    font-weight: 600;
-    color: var(--accent);
-    background: var(--accent-light);
-    padding: 3px 10px;
-    border-radius: 12px;
-    white-space: nowrap;
-    border: 1px solid #f0d090;
-    flex-shrink: 0;
-  }
-  .job-company {
-    font-size: 12.5px;
-    color: var(--muted);
-    font-style: italic;
-    margin-bottom: 8px;
-  }
-  .job-bullets {
-    list-style: none;
-    padding: 0;
-  }
-  .job-bullets li {
-    font-size: 13px;
-    color: #4b5563;
-    padding: 3px 0 3px 16px;
-    position: relative;
-    line-height: 1.5;
-  }
-  .job-bullets li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 10px;
-    top: 5px;
-  }
-
-  /* Proyectos */
-  .project {
-    background: var(--light);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin-bottom: 14px;
-    position: relative;
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
-  .project:hover {
-    box-shadow: 0 6px 24px rgba(15,31,61,0.1);
-    transform: translateY(-1px);
-  }
-  .project:last-child { margin-bottom: 0; }
-  .project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-    gap: 8px;
-  }
-  .project-name {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy);
-  }
-  .project-link {
-    font-size: 11px;
-    color: var(--blue);
-    text-decoration: none;
-    background: rgba(42,92,170,0.08);
-    padding: 3px 9px;
-    border-radius: 10px;
-    border: 1px solid rgba(42,92,170,0.2);
-    font-weight: 500;
-    white-space: nowrap;
-    transition: all 0.2s;
-  }
-  .project-link:hover {
-    background: var(--blue);
-    color: white;
-  }
-  .project-url {
-    font-size: 11.5px;
-    color: var(--blue);
-    margin-bottom: 8px;
-    font-style: italic;
-    opacity: 0.8;
-  }
-  .project-bullets {
-    list-style: none;
-    padding: 0;
-  }
-  .project-bullets li {
-    font-size: 12.5px;
-    color: #4b5563;
-    padding: 2px 0 2px 14px;
-    position: relative;
-    line-height: 1.5;
-  }
-  .project-bullets li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--blue);
-    font-weight: 700;
-  }
-
-  /* Stack técnico */
-  .stack-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-  .stack-item {
-    background: var(--light);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
-  }
-  .stack-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 5px;
-  }
-  .stack-value {
-    font-size: 12px;
-    color: var(--text);
-    line-height: 1.4;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    body { padding: 0; background: var(--white); }
     .cv-wrapper {
-      border-radius: 0;
-      box-shadow: none;
-      max-width: 100%;
+      width: 100%;
+      max-width: 960px;
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 80px rgba(15, 31, 61, 0.18), 0 4px 20px rgba(15, 31, 61, 0.08);
     }
-    .header { padding: 32px 24px; }
-    .header-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .header h1 { font-size: 26px; }
-    .photo-frame { width: 100px; height: 100px; }
-    .main { grid-template-columns: 1fr; }
+
+    /* ── HERO HEADER ── */
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1e4080 100%);
+      padding: 48px 52px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 280px;
+      height: 280px;
+      background: rgba(232, 160, 32, 0.08);
+      border-radius: 50%;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: 30%;
+      width: 400px;
+      height: 200px;
+      background: rgba(42, 92, 170, 0.15);
+      border-radius: 50%;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-frame {
+      flex-shrink: 0;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-tag {
+      display: inline-block;
+      background: rgba(232, 160, 32, 0.2);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(232, 160, 32, 0.3);
+    }
+
+    .header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .header-subtitle {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .contact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
+      font-weight: 400;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item:hover {
+      color: var(--accent);
+    }
+
+    .contact-item svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+    }
+
+    /* ── SIDEBAR ── */
     .sidebar {
-      border-right: none;
-      border-bottom: 1px solid var(--border);
-      padding: 28px 24px;
+      background: var(--light);
+      padding: 36px 28px;
+      border-right: 1px solid var(--border);
     }
-    .content { padding: 28px 24px; }
-    .stack-grid { grid-template-columns: 1fr; }
-    .job-header { flex-direction: column; gap: 4px; }
-  }
 
-  @media (max-width: 480px) {
-    .header h1 { font-size: 22px; }
-    .contact-strip { gap: 6px 14px; }
-    .contact-item { font-size: 12px; }
-    .project-header { flex-direction: column; align-items: flex-start; }
-  }
+    .sidebar-section {
+      margin-bottom: 32px;
+    }
 
-  /* Print */
-  @media print {
-    body { background: white; padding: 0; }
-    .cv-wrapper { box-shadow: none; border-radius: 0; }
-    .project:hover { transform: none; box-shadow: none; }
-  }
-</style>
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .sidebar-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    /* Educación */
+    .edu-item {
+      margin-bottom: 18px;
+    }
+
+    .edu-school {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+
+    .edu-degree {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+
+    .edu-badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: #b07010;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      border: 1px solid #f0d090;
+    }
+
+    /* Skills tags */
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .skill-tag:hover {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .skill-tag.primary {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    /* Idiomas */
+    .lang-item {
+      margin-bottom: 12px;
+    }
+
+    .lang-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .lang-level {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .lang-bar {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .lang-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue), var(--accent));
+      border-radius: 2px;
+      transition: width 0.8s ease;
+    }
+
+    /* Referencias */
+    .ref-item {
+      margin-bottom: 14px;
+    }
+
+    .ref-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .ref-phone {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Certificados */
+    .cert-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+
+    .cert-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .cert-text {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .cert-hours {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      padding: 36px 40px;
+    }
+
+    .content-section {
+      margin-bottom: 32px;
+    }
+
+    .content-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    /* Perfil */
+    .profile-text {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: #374151;
+      font-weight: 300;
+    }
+
+    /* Experiencia */
+    .job {
+      margin-bottom: 22px;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+      gap: 10px;
+    }
+
+    .job-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .job-period {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 3px 10px;
+      border-radius: 12px;
+      white-space: nowrap;
+      border: 1px solid #f0d090;
+      flex-shrink: 0;
+    }
+
+    .job-company {
+      font-size: 12.5px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .job-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .job-bullets li {
+      font-size: 13px;
+      color: #4b5563;
+      padding: 3px 0 3px 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .job-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 10px;
+      top: 5px;
+    }
+
+    /* Proyectos */
+    .project {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      position: relative;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .project:hover {
+      box-shadow: 0 6px 24px rgba(15, 31, 61, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      gap: 8px;
+    }
+
+    .project-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .project-link {
+      font-size: 11px;
+      color: var(--blue);
+      text-decoration: none;
+      background: rgba(42, 92, 170, 0.08);
+      padding: 3px 9px;
+      border-radius: 10px;
+      border: 1px solid rgba(42, 92, 170, 0.2);
+      font-weight: 500;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .project-link:hover {
+      background: var(--blue);
+      color: white;
+    }
+
+    .project-url {
+      font-size: 11.5px;
+      color: var(--blue);
+      margin-bottom: 8px;
+      font-style: italic;
+      opacity: 0.8;
+    }
+
+    .project-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .project-bullets li {
+      font-size: 12.5px;
+      color: #4b5563;
+      padding: 2px 0 2px 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .project-bullets li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* Stack técnico */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .stack-item {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    .stack-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 5px;
+    }
+
+    .stack-value {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      body {
+        padding: 0;
+        background: var(--white);
+      }
+
+      .cv-wrapper {
+        border-radius: 0;
+        box-shadow: none;
+        max-width: 100%;
+      }
+
+      .header {
+        padding: 32px 24px;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .header h1 {
+        font-size: 26px;
+      }
+
+      .photo-frame {
+        width: 100px;
+        height: 100px;
+      }
+
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 28px 24px;
+      }
+
+      .content {
+        padding: 28px 24px;
+      }
+
+      .stack-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .job-header {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 22px;
+      }
+
+      .contact-strip {
+        gap: 6px 14px;
+      }
+
+      .contact-item {
+        font-size: 12px;
+      }
+
+      .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* Print */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .cv-wrapper {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .project:hover {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="cv-wrapper">
+  <div class="cv-wrapper">
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-inner">
-      <div class="photo-frame">
-        <img src="data:image/jpeg;base64,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" alt="Anthony Morales">
-      </div>
-      <div class="header-text">
-        <div class="header-tag">Disponible para trabajar</div>
-        <h1>Anthony Fabricio<br>Morales Catota</h1>
-        <p class="header-subtitle">Ingeniero en Sistemas &nbsp;·&nbsp; Desarrollador Backend &amp; Frontend &nbsp;·&nbsp; Soporte Técnico</p>
-        <div class="contact-strip">
-          <a href="tel:+593959519753" class="contact-item">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            (+593) 959 519 753
-          </a>
-          <a href="mailto:catotantony@gmail.com" class="contact-item">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            catotantony@gmail.com
-          </a>
-          <span class="contact-item">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            Latacunga, Cotopaxi
-          </span>
-          <a href="https://github.com/anthony4452" class="contact-item" target="_blank">
-            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            github.com/anthony4452
-          </a>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="photo-frame">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="Anthony Morales">
+        </div>
+        <div class="header-text">
+          <div class="header-tag">Disponible para trabajar</div>
+          <h1>Anthony Fabricio<br>Morales Catota</h1>
+          <p class="header-subtitle">Ingeniero en Sistemas &nbsp;·&nbsp; Desarrollador Backend &amp; Frontend
+            &nbsp;·&nbsp; Soporte Técnico</p>
+          <div class="contact-strip">
+            <a href="tel:+593959519753" class="contact-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              (+593) 959 519 753
+            </a>
+            <a href="mailto:catotantony@gmail.com" class="contact-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              catotantony@gmail.com
+            </a>
+            <span class="contact-item">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Latacunga, Cotopaxi
+            </span>
+            <a href="https://github.com/anthony4452" class="contact-item" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              github.com/anthony4452
+            </a>
+          </div>
         </div>
       </div>
+    </header>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Educación</div>
+          <div class="edu-item">
+            <div class="edu-school">Universidad Técnica de Cotopaxi</div>
+            <div class="edu-degree">Ingeniería en Sistemas de la Información</div>
+            <span class="edu-badge">Título en trámite · 2026</span>
+          </div>
+          <div class="edu-item">
+            <div class="edu-school">Unidad Educativa Vicente León</div>
+            <div class="edu-degree">Bachillerato General Unificado</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Tecnologías</div>
+          <div class="skill-tags">
+            <span class="skill-tag primary">Laravel</span>
+            <span class="skill-tag primary">Django</span>
+            <span class="skill-tag primary">Flutter</span>
+            <span class="skill-tag primary">.NET / C#</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Node-RED</span>
+            <span class="skill-tag">Playwright</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">SQL Server</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Habilidades</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Trabajo en equipo</span>
+            <span class="skill-tag">Resolución de problemas</span>
+            <span class="skill-tag">Liderazgo</span>
+            <span class="skill-tag">Atención al detalle</span>
+            <span class="skill-tag">Aprendizaje continuo</span>
+            <span class="skill-tag">Responsabilidad</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Idiomas</div>
+          <div class="lang-item">
+            <div class="lang-name">Español <span class="lang-level">Nativo</span></div>
+            <div class="lang-bar">
+              <div class="lang-fill" style="width:100%"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-name">Inglés <span class="lang-level">Intermedio B1</span></div>
+            <div class="lang-bar">
+              <div class="lang-fill" style="width:55%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Certificados</div>
+          <div class="cert-item">
+            <div class="cert-dot"></div>
+            <div>
+              <div class="cert-text">FLISoL 2025 — Festival Latinoamericano de Instalación de Software Libre</div>
+              <div class="cert-hours">UTC Latacunga · 10 horas · Abr 2025</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot"></div>
+            <div>
+              <div class="cert-text">IV Congreso Internacional de Tecnologías de la Información (RECITEIS)</div>
+              <div class="cert-hours">ULEAM Extensión Chone · 40 hrs académicas · Jul-Ago 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Referencias</div>
+          <div class="ref-item">
+            <div class="ref-name">Ing. Agr. Cristian Oña Catota</div>
+            <div class="ref-phone">(+593) 99 949 8656</div>
+          </div>
+          <div class="ref-item">
+            <div class="ref-name">Tcnlg. Cristian Albán</div>
+            <div class="ref-phone">(+593) 99 262 4762</div>
+          </div>
+          <div class="ref-item">
+            <div class="ref-name">Pol. Fernando Casa</div>
+            <div class="ref-phone">(+593) 99 796 7162</div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- CONTENT -->
+      <main class="content">
+
+        <section class="content-section">
+          <div class="section-title">Perfil Profesional</div>
+          <p class="profile-text">
+            Ingeniero en Sistemas (título en trámite) con sólida experiencia en desarrollo de aplicaciones web y
+            móviles.
+            Domino frameworks como <strong>Laravel</strong>, <strong>Django</strong> y <strong>.NET</strong> para
+            backend,
+            y cuento con conocimientos de frontend con <strong>JavaScript</strong>, <strong>Tailwind CSS</strong> y
+            <strong>Vite</strong>.
+            Desarrollo de apps móviles con <strong>Flutter</strong> y experiencia en contenerización con
+            <strong>Docker</strong>.
+            Aplico buenas prácticas: arquitectura MVC, pruebas unitarias, control de versiones y APIs REST.
+            Orientado a crear soluciones reales que generen valor. Disponible para trabajar presencialmente en
+            <strong>Latacunga o Quito</strong>.
+          </p>
+        </section>
+
+        <section class="content-section">
+          <div class="section-title">Experiencia Laboral</div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">Técnico de Mantenimiento</div>
+              <div class="job-period">Mar – Ago 2023</div>
+            </div>
+            <div class="job-company">Empresa · Toacazo, Latacunga</div>
+            <ul class="job-bullets">
+              <li>Mantenimiento preventivo y correctivo de equipamiento e instalaciones.</li>
+              <li>Sustitución de partes defectuosas en equipos de cómputo.</li>
+              <li>Detección, diagnóstico y reporte de fallas técnicas.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">Asistente de Servicios Generales</div>
+              <div class="job-period">Ene – Jul 2024</div>
+            </div>
+            <div class="job-company">Empresa · Toacazo, Latacunga</div>
+            <ul class="job-bullets">
+              <li>Atención al cliente en venta de componentes, periféricos y accesorios de computación.</li>
+              <li>Control y organización del inventario de equipos y repuestos.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-title">Proyectos Destacados</div>
+
+          <div class="project">
+            <div class="project-header">
+              <div class="project-name">🎓 Sistema de Emprendimientos — Proyecto de Titulación</div>
+              <span class="project-link">GitHub (privado)</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Aplicación web con <strong>Laravel 12</strong> y MySQL; arquitectura multi-rol (admin, emprendedor,
+                usuario).</li>
+              <li>Módulos de gestión de pedidos, sistema de chat y notificaciones por email personalizadas.</li>
+              <li>Frontend con <strong>Node.js + Vite</strong>; pruebas unitarias con PHPUnit.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-header">
+              <div class="project-name">🤖 SRI-BOT — Automatización de Facturación</div>
+              <a href="https://github.com/anthony4452/sri-bot" class="project-link"
+                target="_blank">github.com/anthony4452/sri-bot</a>
+            </div>
+            <ul class="project-bullets">
+              <li>Bot en <strong>Python</strong> para descarga automática de comprobantes electrónicos desde el portal
+                del SRI.</li>
+              <li>Automatización web con <strong>Playwright</strong> + Node-RED; transformación XML → Excel con
+                pandas/openpyxl.</li>
+              <li>Contenerización completa con <strong>Docker Compose</strong>; interfaz VNC/noVNC para ejecución
+                automatizada.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-header">
+              <div class="project-name">🧪 LabClinico — Sistema de Recopilación de Aprendizaje</div>
+              <a href="https://gitlab.com/ilyanthoo/labcli" class="project-link"
+                target="_blank">gitlab.com/ilyanthoo/labcli</a>
+            </div>
+            <ul class="project-bullets">
+              <li>Aplicación web con <strong>Django</strong> + PostgreSQL, CRUD completo con AJAX y correos
+                automatizados.</li>
+              <li>Buenas prácticas bajo arquitectura MTV; control de versiones con GitLab.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-header">
+              <div class="project-name">🗺️ Sistema Web Geográfico</div>
+              <a href="https://github.com/anthony4452/webprofinalbmt" class="project-link"
+                target="_blank">github.com/anthony4452/webprofinalbmt</a>
+            </div>
+            <ul class="project-bullets">
+              <li><strong>Laravel 12</strong> con gestión de zonas geográficas (polígonos, mapas interactivos), reportes
+                en PDF.</li>
+              <li>Autenticación con Laravel Breeze; frontend con <strong>Vite + Tailwind CSS</strong>; base de datos
+                MySQL.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-title">Stack Técnico</div>
+          <div class="stack-grid">
+            <div class="stack-item">
+              <div class="stack-label">Backend</div>
+              <div class="stack-value">Python (Django), PHP (Laravel), C# (.NET)</div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-label">Frontend</div>
+              <div class="stack-value">JavaScript, Tailwind CSS, Vite, AJAX</div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-label">Móvil</div>
+              <div class="stack-value">Flutter (Dart)</div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-label">Bases de datos</div>
+              <div class="stack-value">MySQL, PostgreSQL, SQL Server</div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-label">DevOps</div>
+              <div class="stack-value">Docker, Docker Compose, VirtualBox</div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-label">Herramientas</div>
+              <div class="stack-value">Git, GitHub, GitLab, VS Code, pgAdmin, DBeaver, Node-RED</div>
+            </div>
+          </div>
+        </section>
+
+      </main>
     </div>
-  </header>
-
-  <!-- MAIN -->
-  <div class="main">
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-
-      <div class="sidebar-section">
-        <div class="sidebar-title">Educación</div>
-        <div class="edu-item">
-          <div class="edu-school">Universidad Técnica de Cotopaxi</div>
-          <div class="edu-degree">Ingeniería en Sistemas de la Información</div>
-          <span class="edu-badge">Título en trámite · 2026</span>
-        </div>
-        <div class="edu-item">
-          <div class="edu-school">Unidad Educativa Vicente León</div>
-          <div class="edu-degree">Bachillerato General Unificado</div>
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-title">Tecnologías</div>
-        <div class="skill-tags">
-          <span class="skill-tag primary">Laravel</span>
-          <span class="skill-tag primary">Django</span>
-          <span class="skill-tag primary">Flutter</span>
-          <span class="skill-tag primary">.NET / C#</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">PHP</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">Tailwind CSS</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Node-RED</span>
-          <span class="skill-tag">Playwright</span>
-          <span class="skill-tag">Git / GitHub</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">SQL Server</span>
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-title">Habilidades</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Trabajo en equipo</span>
-          <span class="skill-tag">Resolución de problemas</span>
-          <span class="skill-tag">Liderazgo</span>
-          <span class="skill-tag">Atención al detalle</span>
-          <span class="skill-tag">Aprendizaje continuo</span>
-          <span class="skill-tag">Responsabilidad</span>
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-title">Idiomas</div>
-        <div class="lang-item">
-          <div class="lang-name">Español <span class="lang-level">Nativo</span></div>
-          <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-        </div>
-        <div class="lang-item">
-          <div class="lang-name">Inglés <span class="lang-level">Intermedio B1</span></div>
-          <div class="lang-bar"><div class="lang-fill" style="width:55%"></div></div>
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-title">Certificados</div>
-        <div class="cert-item">
-          <div class="cert-dot"></div>
-          <div>
-            <div class="cert-text">FLISoL 2025 — Festival Latinoamericano de Instalación de Software Libre</div>
-            <div class="cert-hours">UTC Latacunga · 10 horas · Abr 2025</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot"></div>
-          <div>
-            <div class="cert-text">IV Congreso Internacional de Tecnologías de la Información (RECITEIS)</div>
-            <div class="cert-hours">ULEAM Extensión Chone · 40 hrs académicas · Jul-Ago 2025</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-title">Referencias</div>
-        <div class="ref-item">
-          <div class="ref-name">Ing. Agr. Cristian Oña Catota</div>
-          <div class="ref-phone">(+593) 99 949 8656</div>
-        </div>
-        <div class="ref-item">
-          <div class="ref-name">Tcnlg. Cristian Albán</div>
-          <div class="ref-phone">(+593) 99 262 4762</div>
-        </div>
-        <div class="ref-item">
-          <div class="ref-name">Pol. Fernando Casa</div>
-          <div class="ref-phone">(+593) 99 796 7162</div>
-        </div>
-      </div>
-
-    </aside>
-
-    <!-- CONTENT -->
-    <main class="content">
-
-      <section class="content-section">
-        <div class="section-title">Perfil Profesional</div>
-        <p class="profile-text">
-          Ingeniero en Sistemas (título en trámite) con sólida experiencia en desarrollo de aplicaciones web y móviles.
-          Domino frameworks como <strong>Laravel</strong>, <strong>Django</strong> y <strong>.NET</strong> para backend,
-          y cuento con conocimientos de frontend con <strong>JavaScript</strong>, <strong>Tailwind CSS</strong> y <strong>Vite</strong>.
-          Desarrollo de apps móviles con <strong>Flutter</strong> y experiencia en contenerización con <strong>Docker</strong>.
-          Aplico buenas prácticas: arquitectura MVC, pruebas unitarias, control de versiones y APIs REST.
-          Orientado a crear soluciones reales que generen valor. Disponible para trabajar presencialmente en <strong>Latacunga o Quito</strong>.
-        </p>
-      </section>
-
-      <section class="content-section">
-        <div class="section-title">Experiencia Laboral</div>
-
-        <div class="job">
-          <div class="job-header">
-            <div class="job-title">Técnico de Mantenimiento</div>
-            <div class="job-period">Mar – Ago 2024</div>
-          </div>
-          <div class="job-company">Empresa · Toacazo, Latacunga</div>
-          <ul class="job-bullets">
-            <li>Mantenimiento preventivo y correctivo de equipamiento e instalaciones.</li>
-            <li>Sustitución de partes defectuosas en equipos de cómputo.</li>
-            <li>Detección, diagnóstico y reporte de fallas técnicas.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-header">
-            <div class="job-title">Asistente de Servicios Generales</div>
-            <div class="job-period">Ene – Jul 2023</div>
-          </div>
-          <div class="job-company">Empresa · Toacazo, Latacunga</div>
-          <ul class="job-bullets">
-            <li>Atención al cliente en venta de componentes, periféricos y accesorios de computación.</li>
-            <li>Control y organización del inventario de equipos y repuestos.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <div class="section-title">Proyectos Destacados</div>
-
-        <div class="project">
-          <div class="project-header">
-            <div class="project-name">🎓 Sistema de Emprendimientos — Proyecto de Titulación</div>
-            <span class="project-link">GitHub (privado)</span>
-          </div>
-          <ul class="project-bullets">
-            <li>Aplicación web con <strong>Laravel 12</strong> y MySQL; arquitectura multi-rol (admin, emprendedor, usuario).</li>
-            <li>Módulos de gestión de pedidos, sistema de chat y notificaciones por email personalizadas.</li>
-            <li>Frontend con <strong>Node.js + Vite</strong>; pruebas unitarias con PHPUnit.</li>
-          </ul>
-        </div>
-
-        <div class="project">
-          <div class="project-header">
-            <div class="project-name">🤖 SRI-BOT — Automatización de Facturación</div>
-            <a href="https://github.com/anthony4452/sri-bot" class="project-link" target="_blank">github.com/anthony4452/sri-bot</a>
-          </div>
-          <ul class="project-bullets">
-            <li>Bot en <strong>Python</strong> para descarga automática de comprobantes electrónicos desde el portal del SRI.</li>
-            <li>Automatización web con <strong>Playwright</strong> + Node-RED; transformación XML → Excel con pandas/openpyxl.</li>
-            <li>Contenerización completa con <strong>Docker Compose</strong>; interfaz VNC/noVNC para ejecución automatizada.</li>
-          </ul>
-        </div>
-
-        <div class="project">
-          <div class="project-header">
-            <div class="project-name">🧪 LabClinico — Sistema de Recopilación de Aprendizaje</div>
-            <a href="https://gitlab.com/ilyanthoo/labcli" class="project-link" target="_blank">gitlab.com/ilyanthoo/labcli</a>
-          </div>
-          <ul class="project-bullets">
-            <li>Aplicación web con <strong>Django</strong> + PostgreSQL, CRUD completo con AJAX y correos automatizados.</li>
-            <li>Buenas prácticas bajo arquitectura MTV; control de versiones con GitLab.</li>
-          </ul>
-        </div>
-
-        <div class="project">
-          <div class="project-header">
-            <div class="project-name">🗺️ Sistema Web Geográfico</div>
-            <a href="https://github.com/anthony4452/webprofinalbmt" class="project-link" target="_blank">github.com/anthony4452/webprofinalbmt</a>
-          </div>
-          <ul class="project-bullets">
-            <li><strong>Laravel 12</strong> con gestión de zonas geográficas (polígonos, mapas interactivos), reportes en PDF.</li>
-            <li>Autenticación con Laravel Breeze; frontend con <strong>Vite + Tailwind CSS</strong>; base de datos MySQL.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <div class="section-title">Stack Técnico</div>
-        <div class="stack-grid">
-          <div class="stack-item">
-            <div class="stack-label">Backend</div>
-            <div class="stack-value">Python (Django), PHP (Laravel), C# (.NET)</div>
-          </div>
-          <div class="stack-item">
-            <div class="stack-label">Frontend</div>
-            <div class="stack-value">JavaScript, Tailwind CSS, Vite, AJAX</div>
-          </div>
-          <div class="stack-item">
-            <div class="stack-label">Móvil</div>
-            <div class="stack-value">Flutter (Dart)</div>
-          </div>
-          <div class="stack-item">
-            <div class="stack-label">Bases de datos</div>
-            <div class="stack-value">MySQL, PostgreSQL, SQL Server</div>
-          </div>
-          <div class="stack-item">
-            <div class="stack-label">DevOps</div>
-            <div class="stack-value">Docker, Docker Compose, VirtualBox</div>
-          </div>
-          <div class="stack-item">
-            <div class="stack-label">Herramientas</div>
-            <div class="stack-value">Git, GitHub, GitLab, VS Code, pgAdmin, DBeaver, Node-RED</div>
-          </div>
-        </div>
-      </section>
-
-    </main>
   </div>
-</div>
 </body>
+
 </html>
